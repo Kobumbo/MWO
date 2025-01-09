@@ -1,0 +1,14 @@
+@startuml
+actor Administrator
+actor Użytkownik
+
+
+Administrator --> (Monitorowanie rynków finansowych)
+Administrator --> (Konfiguracja oferty)
+
+Użytkownik --> (Wybór biletu)
+(Wybór biletu) --> (Zakup biletu)
+Użytkownik --> (Wybór języka)
+(Zakup biletu) --> (Otrzymanie potwierdzenia zakupu)
+
+@enduml
