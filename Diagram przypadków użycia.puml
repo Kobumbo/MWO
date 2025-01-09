@@ -1,0 +1,10 @@
+@startuml
+
+actor Administrator
+actor Użytkownik
+
+Administrator-->(Zdalna aktualizacja biletomatu)
+
+Użytkownik-->(Płatność wieloma metodami)
+
+@enduml
