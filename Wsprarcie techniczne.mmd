@@ -1,0 +1,11 @@
+sequenceDiagram
+    actor SWT as System wsparcia technicznego
+    participant B as Biletomat
+    participant S as Serwis
+    
+    SWT->>B: Automatycznie sprawdź stan biletomatu
+    B-->>SWT: Stan biletomatu (np. brak papieru, awaria itp.)
+    SWT->>S: Wyślij alert o błędzie
+    S-->>SWT: Przyjęcie zgłoszenia
+
+
