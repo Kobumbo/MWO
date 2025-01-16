@@ -1,0 +1,15 @@
+sequenceDiagram
+    actor Administrator
+    Administrator->>System biletowy: Wysyła nowy plik konfiguracyjny biletomat
+    System biletowy-->>Administrator: Potwierdzenie aktualizacji
+
+    Administrator->>System biletowy: Inicjuje monitorowanie
+
+    System biletowy ->> Zewnętszne api z dostępem do danych finansowych: Pobiera dane finansowe
+    Zewnętszne api z dostępem do danych finansowych -->>System biletowy: Dane finansowe
+    System biletowy-->>Administrator: Dane finansowe
+
+    Administrator->>System biletowy: Wysyła nowy plik konfiguracyjny oferty
+    System biletowy-->>Administrator: Potwierdzenie aktualizacji
+    
+    
