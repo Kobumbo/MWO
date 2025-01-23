@@ -1,0 +1,45 @@
+classDiagram
+
+class Model {
+    +pobierzListeBiletow() List
+    +zarejestrujZakup()
+
+}
+
+class View {
+    +wyswietlListeBiletow()
+    +wyswietlSzczegolyTransakcji()
+    +wyswietlIWydrukujBilet()
+}
+
+class Controller {
+    
+    +rozpocznijZakup()
+    +wybierzBilet()
+    +potwierdzTransakcje()
+    +wybierzMetodePlatnosci()
+
+}
+
+class SystemBiletowy {
+    -Map bazaBiletow
+    -List zarejestrowaneZakupy
+    +udostepnijListeBiletow() List
+    +zarejestrujZakup()
+}
+
+class SystemTransakcyjny {
+    -String statusTransakcji
+    +przetworzPlatnosc(danePlatnosci) String
+    +potwierdzZakup() 
+}
+
+
+Controller --> Model: manipulates
+View --> Model : listens
+View --> Controller
+Controller --> View
+Model --> SystemBiletowy : Pobierz listę biletów
+Model --> SystemTransakcyjny : Zarejestruj zakup
+SystemBiletowy --> Model : Potwierdzenie zakupu
+SystemTransakcyjny --> Model : Status transakcji
